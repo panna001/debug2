@@ -20,9 +20,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to user_path(@user), notice: "You have updated user successfully."
     else
-      @user = User.find(params[:id])
-      @books = @user.books
-      render "show"
+      render "edit"
     end
   end
 
